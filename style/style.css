@@ -1,0 +1,17 @@
+html {
+    margin: 10px;
+}
+
+h1 {
+    color: blue;
+}
+
+code {
+    color: navy;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* pre.html > code {
+    position: relative; left: -200px;
+} */

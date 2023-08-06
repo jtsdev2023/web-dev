@@ -3,9 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Web Dev Notes</title>
 </head>
 <body>
-    <h1>This is a test.</h1>
+    <h1>Web Development Notes</h1>
+    <hr>
+    <div class="html">
+        <h2>HTML</h2>
+        <ul>
+            <li>
+                Javascript executed using the <code>&ltscript&gt</code> element is inserted into the DOM exactly where the <code>&ltscript&gt</code> element is located in the HTML document/file.
+                <pre class="html">
+                    <code>
+                        &lt!DOCTYPE html&gt
+                        &lthtml lang="en"&gt
+                        &lthead&gt
+                            &ltmeta charset="UTF-8"&gt
+                            &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+                            &lttitle&gtDocument&lt/title&gt
+                            <span style="color: red">&ltscript&gt</span>Script 1<span style="color: red">&lt/script&gt</span><span style="color: darkgreen"> /* -- script 1 will be executed in head element -- */</span>
+                        &lt/head&gt
+                        &ltbody&gt
+                            <span style="color: red">&ltscript&gt</span>Script 2<span style="color: red">&lt/script&gt</span><span style="color: darkgreen"> /* -- script 2 will be executed in body element -- */</span>
+                        &lt/body&gt
+                        &ltfooter&gt
+                            <span style="color: red">&ltscript&gt</span>Script 3<span style="color: red">&lt/script&gt</span> <span style="color: darkgreen">/* -- script 3 will be executed in footer element -- */</span>
+                        &lt/footer&gt
+                        &lt/html&gt
+                    </code>
+                </pre>
+            </li>
+        </ul>
+    </div>
+    <div class="css">
+        <h2>CSS</h2>
+        <ul>
+            <li>Move text in <code>&ltpre&gt</code> element of class "html" with child <code>&ltcode&gt</code> element to the left 100 pixels using external CSS stylesheet.
+                <pre>
+                    <code>
+                        pre.html > code {
+                            position: relative; left: -100px;
+                        }
+                    </code>
+                </pre>
+            </li>
+        </ul>
+    </div>
+    <div class="javascript">
+        <h2>Javascript</h2>
+        <ul>
+            <li>Create HTML element form Javascript array
+                <pre>
+                    <code>
+                        var list = 'alpha,bravo,charlie'.split(',');
+                        for (var i in list) {
+                            var e = document.createElement('div');
+                            e.id = list[i];
+                            e.className = "customClass";
+                            e.innerHTML = list[i];
+                            document.body.appendChild(e);
+                        }
+                    </code>
+                </pre>
+            </li>
+            <li>Load file in node.js REPL
+                <pre>
+                    <code>
+                        Welcome to Node.js v20.5.0.
+                        Type ".help" for more information.
+                        > .load ~/example.js
+                    </code>
+                </pre>
+            </li>
+        </ul>
+    </div>
 </body>
+<footer>
+</footer>
 </html>
