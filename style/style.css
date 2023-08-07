@@ -2,8 +2,30 @@ html {
     margin: 10px;
 }
 
-h1 {
-    color: blue;
+div.div-mdn-reference {
+    display: inline-block;
+    margin: auto;
+}
+
+p.p-mdn-reference {
+    color: grey;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    float: left;
+}
+
+a.mdn-reference {
+    font-weight: normal;
+    font-style: normal;
+}
+
+p.p-author {
+    color: grey;
+    font-style: italic;
+    position: relative;
+    float: right;
+    margin-right: -80%;
 }
 
 code {
