@@ -9,10 +9,14 @@ div.div-mdn-reference {
 
 p.p-mdn-reference {
     color: grey;
-    font-weight: bold;
+    font-weight: normal;
     font-style: italic;
     position: relative;
     float: left;
+}
+
+span.span-mdn-reference {
+    font-weight: bold;
 }
 
 a.mdn-reference {
@@ -25,7 +29,22 @@ p.p-author {
     font-style: italic;
     position: relative;
     float: right;
-    margin-right: -80%;
+    margin-right: -75%;
+}
+
+/* -- all top-level bullet items -- */
+li.top-level-bullet {
+    padding-bottom: 1%;
+}
+
+/* -- HTML Section -- */
+span.span-source-reference {
+    margin: auto;
+    color: lightgray;
+}
+
+span.span-source-reference > a {
+    color: grey;
 }
 
 code {
@@ -34,6 +53,9 @@ code {
     padding: 0px;
 }
 
+/* -- CSS Section -- */
+
+/* -- JavaScript Section -- */
 /* pre.html > code {
     position: relative; left: -200px;
 } */
