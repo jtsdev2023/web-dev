@@ -32,9 +32,31 @@ p.p-author {
     margin-right: -75%;
 }
 
-/* -- all top-level bullet items -- */
-li.top-level-bullet {
-    padding-bottom: 1%;
+/* -- all top-level divs -- */
+div.div-top-level {
+    /* margin: auto auto auto auto; */
+    margin: auto;
+}
+
+/* -- all top-level ul bullet items -- */
+ul.top-level-bullet > li {
+    margin: 1% auto;
+}
+
+li {
+    margin: 1% auto;
+}
+
+/* -- HTML pre and code blocks -- */
+pre {
+    margin: auto auto auto -10%;
+    /* margin moved code block left where i wanted it */
+    padding: 0%;
+}
+
+code {
+    color: navy;
+    margin: 0% auto;
 }
 
 /* -- HTML Section -- */
@@ -45,12 +67,6 @@ span.span-source-reference {
 
 span.span-source-reference > a {
     color: grey;
-}
-
-code {
-    color: navy;
-    margin: 0px;
-    padding: 0px;
 }
 
 /* -- CSS Section -- */

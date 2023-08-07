@@ -18,11 +18,11 @@
         </p>
     </div>
     <!-- HTML -->
-    <div class="html">
+    <div class="div-top-level html">
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><h2>HTML</h2></a>
-        <ul class="ul-html">
+        <ul class="top-level-bullet">
             <!-- bullet item -->
-            <li class="top-level-bullet">
+            <li>
                 In programming, <span style="font-weight: bold; font-style: italic;">Semantics</span> refers to the meaning of a piece of code. For example, "what effect does running that line of JavaScript have?", or "what purpose or role does that HTML element have?"
                 <span class="span-source-reference">
                     (Source: <a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics">MDN</a>)
@@ -39,8 +39,36 @@
                 </ul>
             </li>
             <li>
-                Javascript executed using the <code>&ltscript&gt</code> element is inserted into the DOM exactly where the <code>&ltscript&gt</code> element is located in the HTML document/file.
-                <pre class="html">
+                Block-Level Content
+                <ul>
+                    <li>
+                        In CSS (Cascading Style Sheets), content that participates in block layout is called <a href="https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content">block-level conent</a>.
+                    </li>
+                    <li>
+                        A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).
+                    </li>
+                    <li>
+                        In a block layout, boxes are laid out one after the other, vertically, beginning at the top of a containing block. Each box's left outer edge touches the left edge of the containing block.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Inline-Level Content
+                <ul>
+                    <li>
+                        In CSS, content that partcipates in inline layout is called <a href="https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content">inline-level content</a>.
+                    </li>
+                    <li>
+                        Most text sequences, replaced elements, and generated content are inline-level by default.
+                    </li>
+                    <li>
+                        In inline layout, a mixed stream of text, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element">replaced elements</a>, and other inline boxes are laid out by fragmenting them into a stack of line boxes. Within each line box, inline-level boxes are aligned to each other vertically or horizontally, depending on the writing mode. Typically, they are aligned by the baselines of their text. This can be changed with CSS.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                JavaScript executed using the <code>&ltscript&gt</code> element is inserted into the DOM exactly where the <code>&ltscript&gt</code> element is located in the HTML document/file.
+                <pre>
                     <code>
                         &lt!DOCTYPE html&gt
                         &lthtml lang="en"&gt
@@ -63,9 +91,9 @@
         </ul>
     </div>
     <!-- CSS -->
-    <div class="css">
+    <div class="div-top-level css">
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><h2>CSS</h2></a>
-        <ul>
+        <ul class="top-level-bullet">
             <li>Move text in <code>&ltpre&gt</code> element of class "html" with child <code>&ltcode&gt</code> element to the left 100 pixels using external CSS stylesheet.
                 <pre>
                     <code>
@@ -75,13 +103,36 @@
                     </code>
                 </pre>
             </li>
+            <li>
+                The <code>margin</code> CSS shorthand property sets the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#margin_area">margin area</a> on all four sides of an HTML element.
+                <!-- sub-bullet -->
+                <ul>
+                    <li>
+                        <code>margin: &ltvalue 1&gt &ltvalue 2&gt &ltvalue 3&gt &ltvalue 4&gt</code>
+                        <ul>
+                            <li>
+                                If only value 1 is supplied, margin spacing applies to all four sides of the element (top, right, bottom, left).
+                            </li>
+                            <li>
+                                If values 1 and 2 are supplied, value 1 applies to the top and bottom margins, and value 2 applies to the right and left margins.
+                            </li>
+                            <li>
+                                If values 1, 2, and 3 are supplied, value 1 applies to the top margin, value 2 applies to both the right and left margins, and value 3 applies to the bottom margin.
+                            </li>
+                            <li>
+                                If all 4 values are supplied, value 1 applies to the top margin, value 2 applies to the right margin, value 3 applies to the bottom margin, and value 4 applies to the left margin.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
     <!-- JavaScript -->
-    <div class="javascript">
+    <div class="div-top-level javascript">
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><h2>JavaScript</h2></a>
-        <ul>
-            <li>Create HTML element form Javascript array
+        <ul class="top-level-bullet">
+            <li>Create HTML element form JavaScript array
                 <pre>
                     <code>
                         var list = 'alpha,bravo,charlie'.split(',');
@@ -101,6 +152,19 @@
                         Welcome to Node.js v20.5.0.
                         Type ".help" for more information.
                         > .load ~/example.js
+                    </code>
+                </pre>
+            </li>
+        </ul>
+    </div>
+    <!-- Git -->
+    <div class="div-top-level git">
+        <a href="https://git-scm.com/"><h2>Git</h2></a>
+        <ul class="top-level-bullet">
+            <li>Delete remote branch
+                <pre>
+                    <code>
+                        git push origin -d &ltremote branch name &gt
                     </code>
                 </pre>
             </li>
