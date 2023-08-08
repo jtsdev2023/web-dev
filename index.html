@@ -175,6 +175,22 @@
                     </code>
                 </pre>
             </li>
+            <li>
+                HTML image this is also a hyperlink
+                <pre>
+                    <code>
+                        &lta href="link"&gt&ltimg src="path or link to image"&gt&lt/a&gt
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Use the anchor tag <code>target="_blank"</code> element attribute to make a hyperlink open in a new tab (Note: user browser settings can override this).
+                <pre>
+                    <code>
+                        &lta target="_blank" href=""&gt&lt/a&gt
+                    </code>
+                </pre>
+            </li>
         </ul>
     </div>
     <!-- CSS -->
@@ -327,14 +343,44 @@
                     </code>
                 </pre>
             </li>
-            <li>
-                Merge a branch (branch 2) into another branch (branch 1)
-                <pre>
-                    <code>
-                        git checkout &ltbranch 1 name&gt
-                        git merge [--ff, --squash] &ltbranch 2 name&gt
-                    </code>
-                </pre>
+            <li> Git merge
+                <ul>
+                    <li>
+                        Merge a branch (branch 2) into another branch (branch 1)
+                        <pre>
+                            <code>
+                                git checkout &ltbranch 1 name&gt
+                                git merge [--ff, --squash] &ltbranch 2 name&gt
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        Do a merge for evaluation and without actually commiting it
+                        <pre>
+                            <code>
+                                git merge --no-commit --no-ff &ltbranch name&gt
+                            </code>
+                        </pre>
+                        <ul>
+                            <li>
+                                Examine (diff) results of merge (staged changes)
+                                <pre>
+                                    <code>
+                                        git diff --cached
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                Abort/backout merge
+                                <pre>
+                                    <code>
+                                        git merge --abort
+                                    </code>
+                                </pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li>
                 View Git log
