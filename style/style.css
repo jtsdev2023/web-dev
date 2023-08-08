@@ -47,6 +47,11 @@ li {
     margin: 1% auto;
 }
 
+ul.fourth-level-bullet {
+    list-style-type: "-";
+    margin: 1% auto;
+}
+
 /* -- HTML pre and code blocks -- */
 pre {
     margin: auto auto auto -10%;
