@@ -67,6 +67,80 @@
                 </ul>
             </li>
             <li>
+                HTML elements
+                <ul>
+                    <li>
+                        <code>&ltp&gt</code> is a paragraph
+                        <ul>
+                            <li>Block-level element</li>
+                            <li>Represents a paragraph of text</li>
+                            <li>Automatically closes if another block-level element is parsed before the closing <code>&ltp&gt</code> tag</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>&ltarticle&gt</code> is a self-contained piece of content
+                        <ul>
+                            <li>
+                                The <code>&ltarticle&gt</code> element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or resuable.
+                            </li>
+                            <li>
+                                Example:
+                                <ul>
+                                    <li>Forum post</li>
+                                    <li>Magazine, newspaper article, or blog post</li>
+                                    <li>User-submitted comment</li>
+                                    <li>Interactive widget or gadget</li>
+                                    <li>Or, any other independent item of content</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>&ltsetction&gt</code> is a section of content
+                        <ul>
+                            <li>Represents a generic standalone section of content, which doesn't have a more specific semantic element to represent it.</li>
+                            <li>With very few exceptions, <code>&ltsection&gt</code> should always have a heading.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                HTML boilerplate
+                <ul>
+                    <li>
+                        <code>&lt!DOCTYPE html&gt</code> tells the browser that this is an HTML document.
+                    </li>
+                    <li>
+                        <code>&lthtml lang="eng"&gt</code>
+                        <ul>
+                            <li>The <code>&lthtml&gt&lt/html&gt</code> element is the root of the document.</li>
+                            <li>The <code>lang="en"</code> attribute tells the browser that this an HTML document written in English.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>&lthead&gt</code> contains the meta data information about the document.
+                        <ul>
+                            <li><code>&ltmeta charset="UTF-8"&gt</code> tells the browser that the document is using the UTF-8 character encoding.</li>
+                            <li><code>&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"</code> tells the browser how to display the content on different devices.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <pre>
+                <code>
+                    &lt!DOCTYPE html&gt
+                    &lthtml lang="en"&gt
+                        &lthead&gt
+                            &ltmeta charset="UTF-8"&gt
+                            &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+                            &lttitle&gtDocument&lt/title&gt
+                        &lt/head&gt
+                        &ltbody&gt
+                            Main content of HTML document.
+                        &lt/body&gt
+                </code>
+            </pre>
+            <li>
                 JavaScript executed using the <code>&ltscript&gt</code> element is inserted into the DOM exactly where the <code>&ltscript&gt</code> element is located in the HTML document/file.
                 <pre>
                     <code>
