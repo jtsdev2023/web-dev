@@ -85,7 +85,7 @@
                             </li>
                             <li>
                                 Example:
-                                <ul>
+                                <ul class="fourth-level-bullet">
                                     <li>Forum post</li>
                                     <li>Magazine, newspaper article, or blog post</li>
                                     <li>User-submitted comment</li>
@@ -162,6 +162,19 @@
                     </code>
                 </pre>
             </li>
+            <li>
+                HTML figure/image with sub-caption
+                <pre>
+                    <code>
+                        &ltfigure&gt
+                            &ltimg src="./path/to/image" alt="image description" title="image title"&gt
+                            &ltfigcaption&gt
+                                Figure Caption Text
+                            &lt/figcaption&gt
+                        &ltfigure&gt
+                    </code>
+                </pre>
+            </li>
         </ul>
     </div>
     <!-- CSS -->
@@ -198,6 +211,21 @@
                         </figcaption>
                     </figure> -->
                     <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model/boxmodel.png"><img src="./images/boxmodel.png" alt="css box model" title="MDN CSS Box Model"></a>
+                    <li>
+                        Everything in CSS has a box around it, and understanding these boxes is key to being able to create more complex layouts with CSS, or to align items with other items.
+                    </li>
+                    <li>
+                        Outer Display Type
+                        <ul>
+                            <li>
+                                If a box has an outer display type of <code>block</code>, then:
+                                <!-- <ul style="list-style-type: '-';"> -->
+                                <ul class="fourth-level-bullet">
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li>Move text in <code>&ltpre&gt</code> element of class "html" with child <code>&ltcode&gt</code> element to the left 100 pixels using external CSS stylesheet.
@@ -267,12 +295,75 @@
     <div class="div-top-level git">
         <a href="https://git-scm.com/"><h2>Git</h2></a>
         <ul class="top-level-bullet">
-            <li>Delete remote branch
+            <li>
+                Delete local branch
                 <pre>
                     <code>
-                        git push origin -d &ltremote branch name &gt
+                        git branch -d &ltbranch name&gt
                     </code>
                 </pre>
+            </li>
+            <li>
+                Delete remote branch
+                <pre>
+                    <code>
+                        git push origin -d &ltremote branch name&gt
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Rename local branch
+                <pre>
+                    <code>
+                        git branch -m &ltnew branch name&gt
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Compare (diff) two Git branches
+                <pre>
+                    <code>
+                        git diff &ltbranch 1 commit hash&gt &ltbranch 2 commit hash&gt
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Merge a branch (branch 2) into another branch (branch 1)
+                <pre>
+                    <code>
+                        git checkout &ltbranch 1 name&gt
+                        git merge [--ff, --squash] &ltbranch 2 name&gt
+                    </code>
+                </pre>
+            </li>
+            <li>
+                View Git log
+                <ul>
+                    <li>
+                        View log of branch that is currently checked out
+                        <pre>
+                            <code>
+                                git log
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        View log of "main" branch when not checked out
+                        <pre>
+                            <code>
+                                git log main..
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        View log of a branch NOT checked out
+                        <pre>
+                            <code>
+                                git log main..&ltbranch name&gt
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
