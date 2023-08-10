@@ -96,11 +96,35 @@
                         </ul>
                     </li>
                     <li>
-                        <code>&ltsetction&gt</code> is a section of content
+                        <code>&ltsection&gt</code> is a section of content
                         <ul>
                             <li>Represents a generic standalone section of content, which doesn't have a more specific semantic element to represent it.</li>
                             <li>With very few exceptions, <code>&ltsection&gt</code> should always have a heading.</li>
                         </ul>
+                    </li>
+                    <li>
+                        <code>&ltol&gt</code> ordered list (1,2,3... a,b,c etc.)
+                    </li>
+                    <li>
+                        <code>&ltimg&gt</code> image
+                        <ul>
+                            <li>Can also load GIFs</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>hr</code>
+                        The <code>&lthr&gt</code> element represents a thematic break (line across page) between paragraph-level elements: for example, a change of sceen in a story, or a shift of topic within a section.
+
+                        Example:
+                        <div style="display: block; border: solid black 1px; margin: 5px; padding: 5px;">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet mollis lectus ut pellentesque. Vestibulum vel justo nec urna vestibulum fringilla vel at ligula. Suspendisse dapibus metus at semper condimentum.
+                            </p>
+                            <hr>
+                            <p>
+                                Vestibulum fringilla volutpat sapien sed pretium. Vestibulum auctor purus enim, vitae ultricies justo feugiat vitae. Cras feugiat eu enim vel placerat. Integer eget dictum mauris.
+                            </p>
+                        </div>
                     </li>
                 </ul>
             </li>
@@ -191,6 +215,12 @@
                     </code>
                 </pre>
             </li>
+            <li>
+                HTML element global attribute <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable"><code>draggable="true"</code></a>
+                <p>
+                    The <code>draggable</code> <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attribute</a> is an <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Enumerated">enumerated</a> attribute that indicates whether the element can be dragged, either with native browser hehavior or the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">HTML Drag and Drop API</a>.
+                </p>
+            </li>
         </ul>
     </div>
     <!-- CSS -->
@@ -237,12 +267,109 @@
                                 If a box has an outer display type of <code>block</code>, then:
                                 <!-- <ul style="list-style-type: '-';"> -->
                                 <ul class="fourth-level-bullet">
-                                    <li></li>
+                                    <li>The box will break onto a new line.</li>
+                                    <li>The <code>width</code> and <code>height</code> properties are respected.</li>
+                                    <li>Padding, margin, and border will cause other elements to be pushed away from the box.</li>
+                                    <li>
+                                        If <code>width</code> is not specified, the box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.
+                                    </li>
+                                    <li>
+                                        Some HTML elements use <code>block</code> as their outer display type by default:
+                                        <ul>
+                                            <li><code>h1</code></li>
+                                            <li><code>p</code></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                If a box has an outer display of <code>inline</code>, then:
+                                <ul class="fourth-level-bullet">
+                                    <li>
+                                        <span>
+                                            The box will NOT break onto a new line.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            The <code>width</code> and <code>height</code> properties will NOT apply.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            Top and bottom padding, margins, and borders will apply but will NOT cause other inline boxes to move away from the box.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            Left and right padding, margins, and borders will apply but will cause other inline boxes to move away from the box.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            Some HTML elements use <code>inline</code> as their display type by default:
+                                            <ul>
+                                                <li><code>a</code></li>
+                                                <li><code>span</code></li>
+                                                <li><code>em</code></li>
+                                                <li><code>strong</code></li>
+                                            </ul>
+                                        </span>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        Inner Display Type
+                        <ul>
+                            <li>
+                                Boxes also have an inner display type, which dictates how elements inside that box are laid out.
+                            </li>
+                            <li>
+                                Block and inline layout is the default way things behave on the web. By default and without any other instruction, the elements inside a box are laid out in <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow">normal flow</a> and behave as a block or inline boxes.
+                            </li>
+                            <li>
+                                You can change the inner display type, for example, by setting the <code>display: flex;</code>. The element will still use the outer display type <code>block</code>, but this changes the inner display type to <code>flex</code>. Any direct children of this box will becom flex items and behave according to the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">flexbox</a> specification.
+                            </li>
+                            <li>
+                                Other inner values that boxes can have:
+                                <ul class="fourth-level-bullet">
+                                    <li>
+                                        <span>
+                                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">flex</a>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids">grid</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow">Block and Inline Layout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        The CSS box model defines the rectangular boxes, including their padding and margin, that are generated for elements and laid out according to the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model">visual formatting model</a>.
+                    </li>
+                    <li>
+                        A box in CSS consists of a content area, which is where any text, images, or other HTML elements are displayed. This is optionally surrounded by padding, a border, a margin, and one or more sides. The box model describes how these elements work together to create a box and are displayed by CSS.
+                    </li>
                 </ul>
+            </li>
+            <li>Center text in a container box:
+                <pre>
+                    <code>
+                        div {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    </code>
+                </pre>
             </li>
             <li>Move text in <code>&ltpre&gt</code> element of class "html" with child <code>&ltcode&gt</code> element to the left 100 pixels using external CSS stylesheet.
                 <pre>
@@ -275,6 +402,38 @@
                         </ul>
                     </li>
                 </ul>
+            </li>
+            <li>
+                Adjust space between <code>&ltul&gt &ltli&gt</code> bullet and the list/bullet itme (text etc.):
+                <pre>
+                    <code>
+                        ul.fourth-level-bullet > li > span {
+                            position: relative;
+                            left: 12px;
+                        }
+                    </code>
+                </pre>
+            </li>
+            <li>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/important"><code>!important</code></a>
+                <p>
+                    A <code>!</code> delimiter followed by the <code>important</code> keyword marks the declaration as important. The <code>!important</code> flag alters the rules selecting the declarations inside the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">cascade</a>.  
+                </p>
+                <p>
+                    The <code>!important</code> comes after the value of the property value pair declartion and is preceded by at least one space. The important flag must be the last token in the declaration. In other words, there can be white space and comments between the flag and the declaration's ending semicolon, but nothing else.
+                </p>
+                <div>
+                    Example:
+                    <pre>
+                        <code>
+                            selector {
+                                property: value; <span style="color: green;">/* normal declaration */</span>
+                                property: value <span style="color: red;">!important</span>; <span style="color: green;">/* important declaration (preferred) */</span>
+                                property: value <span style="color: blue;">! important</span>; <span style="color: green;">/* important declaration (not preferred) */</span>
+                              }                              
+                        </code>
+                    </pre>
+                </div>
             </li>
         </ul>
     </div>
@@ -428,46 +587,46 @@
                         ...
                     </code>
                 </pre>
-                <li>
-                    Enable SSH using key file
-                    <pre>
-                        <code>
-                            <span style="color: green;"># make sure user directory is rwx only for the user (700)</span>
-                            ls -l /home/user
-                            chmod go-w /home/user
-                            
-                            <span style="color: green;"># make sure user's ".ssh" directory is rwx only for the user (700)</span>
-                            ls -l /home/user/.ssh
-                            chmod 700 /home/user/.ssh
-
-                            <span style="color: green;"># make sure the user's "authorized_keys" file is rw only for the user</span>
-                            ls -l /home/user/.ssh/authorized_keys
-                            chmod 600 /home/user/.ssh/authorized_keys
-                        </code>
-                    </pre>
-                </li>
-                <li>
-                    Generate private and public SSH keys
-                    <pre>
-                        <code>
-                            ssh-keygen -t ed25519 -f ~/path/to/my/ssh-key-file
-                        </code>
-                    </pre>
-                </li>
-                <li>
-                    The "public" key (ssh-key-file.pub) will need to be put on the target computer, and the content of the public key will need to be added to the "authorized_keys" file in the user's .ssh directory.
-                    <pre>
-                        <code>
-                            <span style="color: green;"># copy public key to remote host</span>
-                            ssh-copy-id user@remote_host_ip_address
-                            <span style="color: green;"># or</span>
-                            scp ~/.ssh/ssh-key.pub user@remote_host_ip_address://home/user/.ssh
-                            <span style="color: green;"># on the remote host, copy content of public key to "authorized_keys" file</span>
-                            cat .ssh/ssh-key.pub >> authorized_keys
-                        </code>
-                    </pre>
-                </li>
             </ul>
+            <li>
+                Enable SSH using key file
+                <pre>
+                    <code>
+                        <span style="color: green;"># make sure user directory is rwx only for the user (700)</span>
+                        ls -l /home/user
+                        chmod go-w /home/user
+                        
+                        <span style="color: green;"># make sure user's ".ssh" directory is rwx only for the user (700)</span>
+                        ls -l /home/user/.ssh
+                        chmod 700 /home/user/.ssh
+
+                        <span style="color: green;"># make sure the user's "authorized_keys" file is rw only for the user</span>
+                        ls -l /home/user/.ssh/authorized_keys
+                        chmod 600 /home/user/.ssh/authorized_keys
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Generate private and public SSH keys
+                <pre>
+                    <code>
+                        ssh-keygen -t ed25519 -f ~/path/to/my/ssh-key-file
+                    </code>
+                </pre>
+            </li>
+            <li>
+                The "public" key (ssh-key-file.pub) will need to be put on the target computer, and the content of the public key will need to be added to the "authorized_keys" file in the user's .ssh directory.
+                <pre>
+                    <code>
+                        <span style="color: green;"># copy public key to remote host</span>
+                        ssh-copy-id user@remote_host_ip_address
+                        <span style="color: green;"># or</span>
+                        scp ~/.ssh/ssh-key.pub user@remote_host_ip_address://home/user/.ssh
+                        <span style="color: green;"># on the remote host, copy content of public key to "authorized_keys" file</span>
+                        cat .ssh/ssh-key.pub >> authorized_keys
+                    </code>
+                </pre>
+            </li>
         </ul>
     </div>
 </body>
