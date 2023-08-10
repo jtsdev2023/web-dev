@@ -52,6 +52,11 @@ ul.fourth-level-bullet {
     margin: 1% auto;
 }
 
+ul.fourth-level-bullet > li > span {
+    position: relative;
+    left: 12px;
+}
+
 /* -- HTML pre and code blocks -- */
 pre {
     margin: auto auto auto -10%;
