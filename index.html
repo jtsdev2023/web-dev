@@ -413,6 +413,63 @@
             </li>
         </ul>
     </div>
+    <!-- Linux -->
+    <div class="div-top-level linux">
+        <a href=""><h2>Linux</h2></a>
+        <ul class="top-level-bullet">
+            <li>Red Hat Enterprise Linux (RHEL) 9</li>
+            <ul>
+                <li>Disable "system is not registered" message</li>
+                <pre>
+                    <code>
+                        vim /etc/yum/pluginconf.d/subscription-manager.conf
+                        ...
+                        enabled=0
+                        ...
+                    </code>
+                </pre>
+                <li>
+                    Enable SSH using key file
+                    <pre>
+                        <code>
+                            <span style="color: green;"># make sure user directory is rwx only for the user (700)</span>
+                            ls -l /home/user
+                            chmod go-w /home/user
+                            
+                            <span style="color: green;"># make sure user's ".ssh" directory is rwx only for the user (700)</span>
+                            ls -l /home/user/.ssh
+                            chmod 700 /home/user/.ssh
+
+                            <span style="color: green;"># make sure the user's "authorized_keys" file is rw only for the user</span>
+                            ls -l /home/user/.ssh/authorized_keys
+                            chmod 600 /home/user/.ssh/authorized_keys
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    Generate private and public SSH keys
+                    <pre>
+                        <code>
+                            ssh-keygen -t ed25519 -f ~/path/to/my/ssh-key-file
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    The "public" key (ssh-key-file.pub) will need to be put on the target computer, and the content of the public key will need to be added to the "authorized_keys" file in the user's .ssh directory.
+                    <pre>
+                        <code>
+                            <span style="color: green;"># copy public key to remote host</span>
+                            ssh-copy-id user@remote_host_ip_address
+                            <span style="color: green;"># or</span>
+                            scp ~/.ssh/ssh-key.pub user@remote_host_ip_address://home/user/.ssh
+                            <span style="color: green;"># on the remote host, copy content of public key to "authorized_keys" file</span>
+                            cat .ssh/ssh-key.pub >> authorized_keys
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+        </ul>
+    </div>
 </body>
 <footer>
 </footer>
