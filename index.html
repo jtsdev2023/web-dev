@@ -435,6 +435,79 @@
                     </pre>
                 </div>
             </li>
+            <li>
+                Create a box and a circle
+                <pre>
+                    <code>
+                        &lt!DOCTYPE html&gt
+                        &lthtml lang="en"&gt
+                            &lthead&gt
+                                &ltmeta charset="UTF-8"&gt
+                                &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+                                &lttitle&gtCreate Box and Circle&lt/title&gt
+                            &lt/head&gt
+                            &ltbody&gt
+                                &ltdiv<span style="color: blue;"> class="blue-box"</span>&gt
+                                    &ltdiv <span style="color: red;">class="red-circle</span>&gt
+                                    &lt/div&gt
+                                &lt/div&gt
+                            &lt/body&gt
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        div.blue-box {
+                            position: absolute;
+                            background-color: blue;
+                            height: 300px;
+                            width: 500px;
+                            top: 200px;
+                            left: 200px;
+                        }
+                        div.red-circle {
+                            position: relative;
+                            background-color: red;
+                            height: 200px;
+                            width: 200px;
+                            border-radius: 50%; <span style="color: green;">/* this turns box into circle */</span>
+                            top: 150px;
+                            left: 150px;
+                        }
+                    </code>
+                </pre>
+                <div style="position: relative; left: 100px;">
+                    <img src="images/blue-box-red-circle.png" alt="blue box red circle" height="150" width="250">
+                </div>
+            </li>
+            <li>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning">CSS Positioning</a> (Source: <a target="_blank" href="https://www.w3schools.com/css/css_positioning.asp">w3schools.com</a> 10082023)
+                <ul>
+                    <li>
+                        Static
+                        <p>
+                            Static positioning is the default that every HTML element gets. Static positioned elements are not affected by the top, bottom, left, and right properties. An element with <code>postion: static;</code> is not positioned in any special way; it is always positioned according to the normal flow of the page.
+                        </p>
+                    </li>
+                    <li>
+                        Relative
+                        <p>
+                            An element with <code>postion: relative;</code> is positioned relative to its normal position. Setting the top, right, bottom and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+                        </p>
+                    </li>
+                    <li>
+                        Fixed
+                        <p>
+                            An element with <code>position: fixed;</code> is positioned relative to the viewport (web browser), which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. A fixed element does not leave a gap in the page where it would normally have been located.
+                        </p>
+                    </li>
+                    <li>
+                        Absolute
+                        <p>
+                            An element with <code>position: absolute;</code> is positioned relative to the nearest <span style="font-style: italic;">"positioned ancestor"</span> (i.e., an ancestor with the <code>position: &ltvalue&gt&semi;</code> attribute set) instead of positioned relative to the viewport, like fixed. However; if an absolute positioned element has no positioned ancestors, its position is relative to the document body, and moves along with page scrolling.
+                        </p>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
     <!-- JavaScript -->
