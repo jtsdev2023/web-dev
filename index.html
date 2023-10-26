@@ -570,6 +570,45 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                Create a new GitHub repo from someone else's repo
+                <ul>
+                    <li>Create the new empty repo in GitHub</li>
+                    <li>
+                        Make a bare clone of someone else's repo in a temp local location
+                        <pre>
+                            <code>
+                                git clone --bare https://someone.elses.repo.git
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        Change directory into the newly cloned bare repo
+                        <pre>
+                            <code>
+                                cd someone.elses.repo.git
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        Perform a mirror push to your new remote GitHub repo
+                        <pre>
+                            <code>
+                                git push --mirror https://my.github.repo.git
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        clean up/remove temp bare repo
+                        <pre>
+                            <code>
+                                cd ..
+                                rm -rf someone.elses.repo.git
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
     <!-- Linux -->
