@@ -24,11 +24,151 @@
       <a href="linux.html">LINUX</a>
       <a href="python.html">PYTHON</a>
     </div>
+    <!-- Git -->
     <div class="div-body">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-      voluptatibus incidunt dolorem ipsa, ratione suscipit esse culpa odit cum
-      voluptas voluptatum deserunt adipisci. Eius suscipit earum eveniet ratione
-      eligendi repellendus.
+      <a href="https://git-scm.com/"><h2>Git</h2></a>
+      <ul>
+        <li>
+          Delete local branch
+          <pre>
+<code>
+git branch -d &ltbranch name&gt
+</code>
+          </pre>
+        </li>
+        <li>
+          Delete remote branch
+          <pre>
+<code>
+git push origin -d &ltremote branch name&gt
+</code>
+          </pre>
+        </li>
+        <li>
+          Rename local branch
+          <pre>
+<code>
+git branch -m &ltnew branch name&gt
+</code>
+          </pre>
+        </li>
+        <li>
+          Compare (diff) two Git branches
+          <pre>
+<code>
+git diff &ltbranch 1 commit hash&gt &ltbranch 2 commit hash&gt
+</code>
+          </pre>
+        </li>
+        <li>
+          Git merge
+          <ul>
+            <li>
+              Merge a branch (branch 2) into another branch (branch 1)
+              <pre>
+<code>
+git checkout &ltbranch 1 name&gt
+git merge [--ff, --squash] &ltbranch 2 name&gt
+</code>
+              </pre>
+            </li>
+            <li>
+              Do a merge for evaluation and without actually commiting it
+              <pre>
+<code>
+git merge --no-commit --no-ff &ltbranch name&gt
+</code>
+              </pre>
+              <ul>
+                <li>
+                  Examine (diff) results of merge (staged changes)
+                  <pre>
+<code>
+git diff --cached
+</code>
+                  </pre>
+                </li>
+                <li>
+                  Abort/backout merge
+                  <pre>
+<code>
+git merge --abort
+</code>
+                  </pre>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          View Git log
+          <ul>
+            <li>
+              View log of branch that is currently checked out
+              <pre>
+<code>
+git log
+</code>
+</pre>
+            </li>
+            <li>
+              View log of "main" branch when not checked out
+              <pre>
+<code>
+git log main..
+</code>
+              </pre>
+            </li>
+            <li>
+              View log of a branch NOT checked out
+              <pre>
+<code>
+git log main..&ltbranch name&gt
+</code>
+              </pre>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Create a new GitHub repo from someone else's repo
+          <ul>
+            <li>Create the new empty repo in GitHub</li>
+            <li>
+              Make a bare clone of someone else's repo in a temp local location
+              <pre>
+<code>
+git clone --bare https://someone.elses.repo.git
+</code>
+              </pre>
+            </li>
+            <li>
+              Change directory into the newly cloned bare repo
+              <pre>
+<code>
+cd someone.elses.repo.git
+</code>
+              </pre>
+            </li>
+            <li>
+              Perform a mirror push to your new remote GitHub repo
+              <pre>
+<code>
+git push --mirror https://my.github.repo.git
+</code>
+              </pre>
+            </li>
+            <li>
+              clean up/remove temp bare repo
+              <pre>
+<code>
+cd ..
+rm -rf someone.elses.repo.git
+</code>
+              </pre>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
