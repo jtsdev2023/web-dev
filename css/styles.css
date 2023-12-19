@@ -481,9 +481,5 @@ code {
 }
 
 pre {
-<<<<<<< HEAD
-    overflow-x: scroll;
-=======
     overflow-x: auto;
->>>>>>> development-win-pc
 }
