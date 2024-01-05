@@ -24,50 +24,6 @@
       <a href="linux.html">LINUX</a>
       <a class="active" href="python.html">PYTHON</a>
     </div>
-    <!-- Python -->
-    <div class="div-body">
-      <a href=""><h2>Python</h2></a>
-      <ul>
-        <li>
-          Python 'timeit' Example
-          <pre>
-<code>
-import timeit
-
-test1 = """
-users = {'a':'active', 'b':'inactive', 'c':'active'}
-
-def dict_copy(input_dict: dict) -> None:
-  for user, status in input_dict.copy().items():
-    if status == 'inactive':
-      del users[user]
-"""
-
-test2 = """
-users = {'a':'active', 'b':'inactive', 'c':'active'}
-
-def dict_items(input_dict: dict) -> None:
-  for user, status in input_dict.items():
-    if status == 'inactive':
-      del [users][user]
-"""
-
-
-print(
-  timeit.timeit(
-    setup=test1
-  )
-)
-
-print(
-  timeit.timeit(
-    setup=test2
-  )
-)
-</code>
-      </pre>
-        </li>
-      </ul>
-    </div>
+ 
   </body>
 </html>
