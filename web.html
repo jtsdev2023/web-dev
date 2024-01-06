@@ -805,6 +805,20 @@ Type ".help" for more information.
 </code>
           </pre>
         </li>
+        <li>
+          JavaScript - iterate through array of objects.
+          <pre>
+            <code>
+test = [ {'a':'alpha', 'b':'bravo'} ]
+
+test.forEach(function (item, index) {
+  for (const [key, value] of Object.entries(item)) {
+    console.log(value);
+  }
+})
+            </code>
+          </pre>
+        </li>
       </ul>
     </div>
   </body>
