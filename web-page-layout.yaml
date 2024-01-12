@@ -5,7 +5,7 @@
       paragraph:
         - Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptatibus incidunt dolorem ipsa, ratione suscipit esse culpa odit cum voluptas voluptatum deserunt adipisci. Eius suscipit earum eveniet ratione eligendi repellendus.
         - Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptatibus incidunt dolorem ipsa, ratione suscipit esse culpa odit cum voluptas voluptatum deserunt adipisci. Eius suscipit earum eveniet ratione eligendi repellendus.
-      pre-code:
+      pre_code:
         - |
           import time
 
