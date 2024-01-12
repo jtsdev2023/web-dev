@@ -30,14 +30,17 @@
     <main>
       <script>
         let addDiv = document.createDocumentFragment();
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < jsonPage.length; i++) {
           let newDiv = document.createElement('div');
           newDiv.setAttribute('class', 'div_body');
-          // newDiv.innerText = "test";
           let newArticle = document.createElement('article');
-          let newParagraph = document.createElement('p');
-          newParagraph.innerText = "test";
-          newArticle.appendChild(newParagraph);
+          // newParagraph.innerText = "test";
+          for (let ii = 0; ii < jsonPage[i].div.article.paragraph.length; ii++) {
+            let newParagraph = document.createElement('p');
+            newParagraph.innerText = jsonPage[i].div.article.paragraph[ii];
+            newArticle.appendChild(newParagraph);
+          }
+          // newArticle.appendChild(newParagraph);
           newDiv.appendChild(newArticle);
           addDiv.appendChild(newDiv);
         }
