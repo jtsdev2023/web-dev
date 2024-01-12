@@ -39,10 +39,6 @@
             newParagraph.innerText = jsonPage[i].div.article.paragraph[ii];
             newArticle.appendChild(newParagraph);
           }
-          // let newPre = document.createElement('pre');
-          // let newCode = document.createElement('code');
-          // newCode.innerText = "TEST";
-          // newPre.appendChild(newCode);
           for (let iii = 0; iii < jsonPage[i].div.article.pre_code.length; iii++) {
             let newPre = document.createElement('pre');
             let newCode = document.createElement('code');
@@ -50,7 +46,11 @@
             newPre.appendChild(newCode);
             newArticle.appendChild(newPre);
           }
-          // newArticle.appendChild(newPre);
+          for (let iv = 0; iv < jsonPage[i].div.article.img.length; iv++) {
+            let newImg = document.createElement('img');
+            newImg.src = jsonPage[i].div.article.img[iv];
+            newArticle.appendChild(newImg);
+          }
           newDiv.appendChild(newArticle);
           addDiv.appendChild(newDiv);
         }
