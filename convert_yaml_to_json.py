@@ -50,7 +50,7 @@ def write_json_to_file(input_json_string: str) -> str:
     fail_msg = f'Error in writting to file "{json_file}"'
 
     try:
-        with open(json_file, 'w', encoding='utf-8') as f:
+        with open(json_file, 'w') as f:
             f.write(input_json_string)
         return (0, success_msg)
     except Exception as error:

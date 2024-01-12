@@ -11,6 +11,9 @@
       alt="Image by OpenClipart-Vectors from Pixabay"
     />
     <title>JTS Tech: HOME</title>
+    <script>
+      const jsonPage = [{"div": {"classes": ["div_body"], "article": {"paragraph": ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate\nvoluptatibus incidunt dolorem ipsa, ratione suscipit esse culpa odit cum\nvoluptas voluptatum deserunt adipisci. Eius suscipit earum eveniet ratione\neligendi repellendus.\n", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate\nvoluptatibus incidunt dolorem ipsa, ratione suscipit esse culpa odit cum\nvoluptas voluptatum deserunt adipisci. Eius suscipit earum eveniet ratione\neligendi repellendus.\n"], "pre-code": ["import time\n\ndef hello_world() -> None:\n    print(\"Hello World!\")\n", "<div class=\"div_example\">This is a div element</div>"], "img": ["./blue-box-red-circle.png", "./boxmodel.png"]}}}]
+    </script>
   </head>
   <body>
     <div class="main-title">
@@ -25,31 +28,21 @@
       <a href="python.html">PYTHON</a>
     </div>
     <main>
-      <div class="div_body">
-        <article>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            voluptatibus incidunt dolorem ipsa, ratione suscipit esse culpa odit cum
-            voluptas voluptatum deserunt adipisci. Eius suscipit earum eveniet ratione
-            eligendi repellendus.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            voluptatibus incidunt dolorem ipsa, ratione suscipit esse culpa odit cum
-            voluptas voluptatum deserunt adipisci. Eius suscipit earum eveniet ratione
-            eligendi repellendus.
-          </p>
-          <pre>
-            <code>
-import time
-
-def hello_world() -> None:
-    print("Hello World!")
-            </code>
-          </pre>
-          <img src="./blue-box-red-circle.png" alt="" style="width: 200px; height: 150px;">
-        </article>
-      </div>
+      <script>
+        let addDiv = document.createDocumentFragment();
+        for (let i = 0; i < 4; i++) {
+          let newDiv = document.createElement('div');
+          newDiv.setAttribute('class', 'div_body');
+          // newDiv.innerText = "test";
+          let newArticle = document.createElement('article');
+          let newParagraph = document.createElement('p');
+          newParagraph.innerText = "test";
+          newArticle.appendChild(newParagraph);
+          newDiv.appendChild(newArticle);
+          addDiv.appendChild(newDiv);
+        }
+        document.body.appendChild(addDiv);
+      </script>
     </main>
   </body>
   <footer><span class="span-footer">JTS Tech</span> 2023 ©️</footer>
