@@ -4,9 +4,8 @@ import json
 import yaml
 
 
-def read_yaml_file() -> Tuple[int, str]:
+def read_yaml_file(yaml_file: str = 'web-page-layout.yaml') -> Tuple[int, str]:
     """DOC STRING"""
-    yaml_file = 'web-page-layout.yaml'
     directory_content_list = os.listdir()
 
     if yaml_file in directory_content_list:
@@ -50,7 +49,7 @@ def write_json_to_file(input_json_string: str) -> str:
     fail_msg = f'Error in writting to file "{json_file}"'
 
     try:
-        with open(json_file, 'w') as f:
+        with open(json_file, 'w', encoding='utf-8') as f:
             f.write(input_json_string)
         return (0, success_msg)
     except Exception as error:
