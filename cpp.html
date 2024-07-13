@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="smiley-559124_640.png"
+      type="image/x-icon"
+      alt="Image by OpenClipart-Vectors from Pixabay"
+    />
+    <title>JTS Tech: LINUX</title>
+  </head>
+  <body>
+    <div class="main-title">
+      <span class="span-title">JTS Tech:</span> Technical Tidbits, Ramblings,
+      and Flotsam
+    </div>
+    <div class="right-nav-bar">
+      <a href="index.html">HOME</a>
+      <a href="web.html">WEB</a>
+      <a href="git.html">GIT</a>
+      <a href="linux.html">LINUX</a>
+      <a href="python.html">PYTHON</a>
+      <a class="active" href="cpp.html">C++</a>
+    </div>
+    <!-- Linux -->
+    <div class="div-body">
+      <a href=""><h2>C++</h2></a>
+      <ul>
+        <li>
+          C++ Pointers
+          <pre>
+            <code>
+// main.cpp
+
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+#include &lt;typeinfo&gt;
+#include &lt;cstdint&gt; // Add this line to include the &lt;cstdint&gt; header file
+
+using namespace std;
+
+int main()
+{
+    
+    // declare char
+    char x = 'a';
+    cout << typeid(x).name() << endl;
+
+    // auto cast variable 'y' as a pointer to 'x'
+    // where '&x' refers to the memory address of 'x'
+    auto y = &x;
+    // print the type of variable 'y'
+    cout << typeid(y).name() << endl;
+
+    // declare void pointer 'z'
+    void* z;
+    cout << typeid(z).name() << endl;
+
+    // declare int pointer 'i' with no initial value
+    int* i;
+    cout << typeid(i).name() << endl;
+
+    // declare char pointer 'p'
+    // where '&x' refers to the memory address of 'x'
+    char* p = &x;
+
+    // dereference pointer
+    cout << *p << endl;
+    // get address of pointer
+    cout << &p << endl;
+
+    // manually cast pointer to long
+    // not recommended b/c it's error prone
+    uintptr_t addr = 0x7ffddbffaa38;
+    long* v = reinterpret_cast<long*>(addr);
+    cout << typeid(v).name() << endl;
+
+    return 0;
+
+};
+              
+            </code>
+          </pre>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
