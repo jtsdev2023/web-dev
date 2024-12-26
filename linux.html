@@ -81,6 +81,27 @@ cat .ssh/ssh-key.pub >> authorized_keys
 </code>
           </pre>
         </li>
+        <li>
+          Customize Python 3 Virtual Environment Prompt (Ubuntu)
+          <pre>       <code>
+<span style="color: green;"># navigate to path "/usr/lib/python3.12/venv/scripts/common/activate"</span>
+
+<span style="color: green;"># open the "activate" file with an editor</span>
+sudo vim /usr/lib/python3.12/venv/scripts/common/activate
+<span style="color: green;"># find the section for the "VIRTUAL_ENV_DISABLE_PROMPT" (towards the bottom in this version of Ubuntu about line no. 62)</span>
+<span style="color: green;"># comment out the orginal prompt with "#"</span>
+# PS1=__VENV_PROMPT__"${PS1:-}"
+<span style="color: green;"># insert a custom line similar to below</span>
+<span style="color: green;"># this assigns "__VENV_PROMPT__" to a Bash variable</span>
+JTS_CUSTOM_PROMPT=__VENV_PROMPT__
+<span style="color: green;"># save/"export" the Bash variable</span>
+export JTS_CUSTOM_PROMPT
+<span style="color: green;"># create your customized prompt assigned to the "PS1" Bash variable</span>
+PS1="\[\033[0;33m\]${JTS_CUSTOM_PROMPT}\[\033[0m\]${PS1:-}"
+<span style="color: green;"># save/export the PS1 Bash variable</span>
+</code>
+          </pre>
+        </li>
       </ul>
     </div>
   </body>
